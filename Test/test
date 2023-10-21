@@ -1,0 +1,39 @@
+import java.util.HashMap;
+import java.util.Map;
+
+class Solution {
+    public int solution(int[] A) {
+        int n = A.length;
+        
+        if (n < 2) {
+            return 0; // No moves can be performed if the length is smaller than 2.
+        }
+        
+        Map<Integer, Integer> sumCount = new HashMap<>();
+        int maxMoves = 0;
+        
+        int left = 0, right = n - 1;
+        
+        while (left <= right) {
+            int sum = A[left] + A[right];
+            int moves = 1;
+            
+            if (sumCount.containsKey(sum)) {
+                moves += sumCount.get(sum);
+            }
+            
+            sumCount.put(sum, moves);
+            
+            maxMoves = Math.max(maxMoves, moves);
+            
+            if (left == right) {
+                break;
+            }
+            
+            left++;
+            right--;
+        }
+        
+        return maxMoves;
+    }
+}
