@@ -1,7 +1,6 @@
-package Basics.LinkedList;
+package LinkedList;
 
 class Node {
-
     int data;
     Node next;
 
@@ -11,7 +10,7 @@ class Node {
 
 }
 
-class Main {
+public class deletion {
     public static void main(String args[]) {
         Node n1 = new Node(10);
         Node n2 = new Node(20);
@@ -22,7 +21,21 @@ class Main {
         n2.next = n3;
         n3.next = null;
 
+        Delete(head, 1);
         Traverse(head);
+    }
+
+    static void Delete(Node head, int pos) {
+        if (pos == 0) {
+            head = head.next;
+            return;
+        }
+
+        Node prev = head;
+        for (int i = 0; i < pos - 1; i++) {
+            prev = prev.next;
+        }
+        prev.next = prev.next.next;
     }
 
     static void Traverse(Node head) {
@@ -31,5 +44,7 @@ class Main {
             System.out.println(cur.data);
             cur = cur.next;
         }
+
     }
+
 }

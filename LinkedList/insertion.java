@@ -1,4 +1,4 @@
-package Basics.LinkedList;
+package LinkedList;
 
 class Node1 {
     int data;
