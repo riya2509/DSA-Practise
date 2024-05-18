@@ -61,4 +61,27 @@ public class LinkedList {
         }
         length++;
     }
+
+    // The return type of the method is Node
+    public Node removeLast() {
+        // Edge case When the Linked List is empty
+        if (length == 0) // When the initial length of the LL is 0
+            return null;
+        // When the Linked List has some value
+        Node temp = head;
+        Node pre = head;
+        while (temp.next != null) {
+            pre = temp;
+            temp = temp.next;
+        }
+        tail = pre; // pre's task over
+        tail.next = null; // breaking that node from the end
+        length--;
+        // Edge case when the linked list has only one item
+        if (length == 0) { // When the length of LL is decremented to 0
+            head = null;
+            tail = null;
+        }
+        return temp;
+    }
 }
