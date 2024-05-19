@@ -14,7 +14,8 @@ public class Main {
         // System.out.println(myLinkedList.get(2).value + "\n");
         // myLinkedList.set(1, 4);
         // myLinkedList.insert(1, 1);
-        myLinkedList.remove(2);
+        // myLinkedList.remove(2);
+        myLinkedList.reverse();
         myLinkedList.printList();
 
         // System.out.println(myLinkedList.removeFirst().value); // for 2 items and
