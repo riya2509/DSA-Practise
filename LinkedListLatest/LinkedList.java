@@ -19,7 +19,8 @@ public class LinkedList {
         }
     }
 
-    // Constructor
+    // Constructor - a special type of method which is used to initialize the
+    // object.
     public LinkedList(int value) {
         Node newNode = new Node(value);
         // newNode is a variable of type Node
@@ -183,6 +184,17 @@ public class LinkedList {
             before = temp;
             temp = after;
         }
+    }
+
+    // Finding Middle Node of LL using Floyd's Tortoise and Hare algorithm
+    public Node findMiddleNode() {
+        Node slow = head;
+        Node fast = head;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
     }
 
 }

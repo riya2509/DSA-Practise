@@ -15,7 +15,8 @@ public class Main {
         // myLinkedList.set(1, 4);
         // myLinkedList.insert(1, 1);
         // myLinkedList.remove(2);
-        myLinkedList.reverse();
+        // myLinkedList.reverse();
+        System.out.println(myLinkedList.findMiddleNode().value);
         myLinkedList.printList();
 
         // System.out.println(myLinkedList.removeFirst().value); // for 2 items and
