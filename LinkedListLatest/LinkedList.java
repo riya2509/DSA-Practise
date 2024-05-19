@@ -135,13 +135,13 @@ public class LinkedList {
 
     // Insert a node and returning boolean value
     public boolean insert(int index, int value) {
-        if (index < 0 || index > length)
+        if (index < 0 || index >= length)
             return false;
         if (index == 0) {
             prepend(value);
             return true;
         }
-        if (index == length) {
+        if (index == length - 1) {
             append(value);
             return true;
         }
@@ -151,5 +151,21 @@ public class LinkedList {
         temp.next = newNode;
         length++;
         return true;
+    }
+
+    // Remove a node and return node
+    public Node remove(int index) {
+        if (index < 0 || index >= length)
+            return null;
+        if (index == 0)
+            return removeFirst();
+        if (index == length - 1)
+            return removeLast();
+        Node prev = get(index - 1);
+        Node temp = prev.next; // Can also use get method here but minimizing from O(n) to O(1)
+        prev.next = temp.next;
+        temp.next = null;
+        length--;
+        return temp;
     }
 }
