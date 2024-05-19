@@ -121,4 +121,15 @@ public class LinkedList {
         }
         return temp;
     }
+
+    // Set method for returning a boolean value if we could set a new value in the
+    // node
+    public boolean set(int index, int value) {
+        Node temp = get(index);
+        if (temp != null) {
+            temp.value = value; // value means setting the value present in the parameter
+            return true;
+        }
+        return false;
+    }
 }

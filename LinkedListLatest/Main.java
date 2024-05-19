@@ -11,7 +11,8 @@ public class Main {
         // myLinkedList.getTail();
         // myLinkedList.getLength();
         // myLinkedList.prepend(5);
-        System.out.println(myLinkedList.get(2).value + "\n");
+        // System.out.println(myLinkedList.get(2).value + "\n");
+        myLinkedList.set(1, 4);
         myLinkedList.printList();
 
         // System.out.println(myLinkedList.removeFirst().value); // for 2 items and
