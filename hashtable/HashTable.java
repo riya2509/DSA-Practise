@@ -40,4 +40,19 @@ public class HashTable {
         }
     }
 
+    // Hash Method private cuz only going to be used by other methods in the
+    // HashTable class
+
+    private int hash(String key) {
+        int hash = 0;
+        char[] keyChars = key.toCharArray(); // ['p','a','i','n','t']
+        for (int i = 0; i < keyChars.length; i++) {
+            int asciiValue = keyChars[i]; // for p asciiValue = 112
+            hash = (hash + asciiValue * 23) % dataMap.length; // Any prime number instead of
+            // 23 can be used and prime number is used to get a more random number
+            // and % will give remainder ranging from 0-6 as length =7
+        }
+        return hash;
+    }
+
 }
