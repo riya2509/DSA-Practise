@@ -43,7 +43,7 @@ public class HashTable {
     }
 
     // Hash Method private cuz only going to be used by other methods in the
-    // HashTable class
+    // HashTable class. TC= O(1)
 
     private int hash(String key) {
         int hash = 0;
@@ -57,7 +57,7 @@ public class HashTable {
         return hash;
     }
 
-    // Set method
+    // Set method . TC = O(1)
     public void set(String key, int value) {
         int index = hash(key);
         Node newNode = new Node(key, value);
@@ -77,6 +77,8 @@ public class HashTable {
     }
 
     // Get method taking key input and return value of the key which is int
+    // TC = O(1) (Note: Not O(n) although we iterate through LL cuz Hash Table would
+    // be more randomized and keys set to different indexes)
     public int get(String key) {
         int index = hash(key);
         Node temp = dataMap[index]; // If no LL present then temp = null and return 0
