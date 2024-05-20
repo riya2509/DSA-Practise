@@ -73,4 +73,17 @@ public class HashTable {
             temp.next = newNode;
         }
     }
+
+    // Get method taking key input and return value of the key which is int
+    public int get(String key) {
+        int index = hash(key);
+        Node temp = dataMap[index]; // If no LL present then temp = null and return 0
+        // This code snippet if there is a LL present at that index
+        while (temp != null) {
+            if (temp.key == key)
+                return temp.value;
+            temp = temp.next;
+        }
+        return 0;
+    }
 }
