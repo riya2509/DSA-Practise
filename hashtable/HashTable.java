@@ -93,6 +93,7 @@ public class HashTable {
 
     // Keys Method - taking keys in the hash table , put them in an array list and
     // return it
+    // Note: Key lookup is O(1) but not value.
     public ArrayList keys() {
         // Creating the ArrayList
         ArrayList<String> allKeys = new ArrayList<>();
