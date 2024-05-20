@@ -1,5 +1,7 @@
 package hashtable;
 
+import java.util.ArrayList;
+
 //Hash Table - Key value pairs "key":1000 <-- value
 
 // 1. Works only in one way passing key we get index where it is stored
@@ -85,5 +87,22 @@ public class HashTable {
             temp = temp.next;
         }
         return 0;
+    }
+
+    // Keys Method - taking keys in the hash table , put them in an array list and
+    // return it
+    public ArrayList keys() {
+        // Creating the ArrayList
+        ArrayList<String> allKeys = new ArrayList<>();
+        for (int i = 0; i < dataMap.length; i++) {
+            Node temp = dataMap[i];
+            // Cannot use a for loop cuz we don't know how many items in LL
+            while (temp != null) {
+                // Adding items to ArrayList
+                allKeys.add(temp.key);
+                temp = temp.next;
+            }
+        }
+        return allKeys;
     }
 }
