@@ -11,7 +11,7 @@ package hashtable;
 
 public class HashTable {
     private int size = 7;
-    private Node[] dataMap;
+    private Node[] dataMap; // array of pointers
 
     class Node {
         String key;
@@ -55,4 +55,22 @@ public class HashTable {
         return hash;
     }
 
+    // Set method
+    public void set(String key, int value) {
+        int index = hash(key);
+        Node newNode = new Node(key, value);
+        // if no items in LL
+        if (dataMap[index] == null) {
+            dataMap[index] = newNode;
+        }
+        // after there are some items in LL
+        else {
+            Node temp = dataMap[index]; // Pointing temp to the first node
+            // Now iterating through the LL
+            while (temp.next != null) {
+                temp = temp.next;
+            } // This loop stops us at last node
+            temp.next = newNode;
+        }
+    }
 }
