@@ -16,8 +16,12 @@ public class Main {
         // myLinkedList.insert(1, 1);
         // myLinkedList.remove(2);
         // myLinkedList.reverse();
-        System.out.println(myLinkedList.findMiddleNode().value);
-        myLinkedList.printList();
+        // System.out.println(myLinkedList.findMiddleNode().value);
+        // myLinkedList.printList();
+
+        myLinkedList.getTail().next = myLinkedList.getHead().next;
+        System.out.println("Has Loop:");
+        System.out.println(myLinkedList.hasLoop());
 
         // System.out.println(myLinkedList.removeFirst().value); // for 2 items and
         // returns Node so use .value

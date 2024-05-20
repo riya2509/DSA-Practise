@@ -39,12 +39,14 @@ public class LinkedList {
         }
     }
 
-    public void getHead() {
-        System.out.println("Head:" + head.value);
+    public Node getHead() {
+        // System.out.println("Head:" + head.value);
+        return head;
     }
 
-    public void getTail() {
-        System.out.println("Tail:" + tail.value);
+    public Node getTail() {
+        // System.out.println("Tail:" + tail.value);
+        return tail;
     }
 
     public void getLength() {
@@ -195,6 +197,27 @@ public class LinkedList {
             fast = fast.next.next;
         }
         return slow;
+    }
+
+    // Detecting a cycle in a LL using Floyd's cycle finding or Tortoise
+    // and Hare algorithm
+
+    // Note: Both the conditions in while loop are necessary
+    // fast!=null if fast pointer reached the end of the list
+    // fast.next!=null so that the code doesn't throw a NullPointerException
+
+    public boolean hasLoop() {
+        Node slow = head;
+        Node fast = head;
+        if (length == 0 || length == 1)
+            return false;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (slow == fast)
+                return true;
+        }
+        return false;
     }
 
 }
