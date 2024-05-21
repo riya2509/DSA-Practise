@@ -138,13 +138,13 @@ public class LinkedList {
 
     // Insert a node and returning boolean value
     public boolean insert(int index, int value) {
-        if (index < 0 || index >= length)
+        if (index < 0 || index > length)
             return false;
         if (index == 0) {
             prepend(value);
             return true;
         }
-        if (index == length - 1) {
+        if (index == length) {
             append(value);
             return true;
         }
