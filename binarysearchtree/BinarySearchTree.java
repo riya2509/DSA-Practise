@@ -66,4 +66,22 @@ public class BinarySearchTree {
         }
     }
 
+    // Contains method - If the given value exists in the tree or not
+    public boolean contains(int value) {
+        // if (root == null)
+        // return false;
+        // Not needed the above step as when we set Node temp = root it is
+        // initially set as null and will return false
+        Node temp = root;
+        while (temp != null) {
+            if (value < temp.value) {
+                temp = temp.left;
+            } else if (value > temp.value) {
+                temp = temp.right;
+            } else
+                return true;
+        }
+        return false;
+    }
+
 }
