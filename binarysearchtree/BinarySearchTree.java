@@ -30,4 +30,40 @@ public class BinarySearchTree {
     // does is to create a root node which will be set as null which will be
     // redundant as it is already set to null when initially writting private Node
     // root
+
+    // Insert Method return type boolean if we were able to insert it or not
+    // 1st Edge Case - If BST is empty
+    // if(root == null) then root = newNode;
+    // 2nd Edge case - If the value of the newNode already exists i.e. duplicate
+    // inside while loop if(newNode==temp) return false;
+
+    public boolean insert(int value) {
+        Node newNode = new Node(value);
+        // 1st Edge case
+        if (root == null) {
+            root = newNode;
+            return true;
+        }
+
+        Node temp = root;
+        while (true) {
+            // 2nd Edge case
+            if (newNode.value == temp.value)
+                return false;
+            if (newNode.value < temp.value) {
+                if (temp.left == null) {
+                    temp.left = newNode;
+                    return true;
+                }
+                temp = temp.left;
+            } else {
+                if (temp.right == null) {
+                    temp.right = newNode;
+                    return true;
+                }
+                temp = temp.right;
+            }
+        }
+    }
+
 }
