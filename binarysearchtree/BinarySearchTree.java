@@ -22,7 +22,7 @@ public class BinarySearchTree {
         Node right;
 
         // Constructor
-        private Node(int value) {
+        Node(int value) {
             this.value = value;
         }
     }
