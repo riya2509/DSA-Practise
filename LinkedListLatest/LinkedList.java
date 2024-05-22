@@ -244,4 +244,25 @@ public class LinkedList {
         }
         System.out.println("null");
     }
+
+    // Find Kth Node from end Using the two pointer method / runner technique.
+
+    public Node findKthFromEnd(int k) {
+        Node slow = head;
+        Node fast = head;
+
+        for (int i = 0; i < k; i++) {
+            if (fast == null) {
+                return null;
+            }
+            fast = fast.next;
+        }
+
+        while (fast != null) {
+            slow = slow.next;
+            fast = fast.next;
+        }
+
+        return slow;
+    }
 }
