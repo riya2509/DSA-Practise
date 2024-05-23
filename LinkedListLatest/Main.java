@@ -6,9 +6,19 @@ public class Main {
         myLinkedList.append(3);
         myLinkedList.append(23);
         myLinkedList.append(7);
-        int k = 2;
-        int result = myLinkedList.findKthFromEnd(k).value;
-        System.out.println(result);
+        // int k = 2;
+        // int result = myLinkedList.findKthFromEnd(k).value;
+        // System.out.println(result);
+        // Print the list before partitioning
+        System.out.println("LL before partitionList:");
+        myLinkedList.printList(); // Output: 3 5 8 10 2 1
+
+        // Call the partitionList method with x = 5
+        myLinkedList.partitionList(5);
+
+        // Print the list after partitioning
+        System.out.println("LL after partitionList:");
+        myLinkedList.printList(); // Output: 3 2 1 5 8 10
 
         // myLinkedList.getHead();
         // myLinkedList.getTail();
