@@ -1,3 +1,9 @@
+//  LIFO - Last in First Out
+//  Implemented using Linked List
+// push -> prepend, pop -> removeFirst, head -> top, length -> height
+// As both remove and insert operation is O(1) from the start of the 
+// LL therefore the stack's last element's next pointer will point to null
+
 package stack;
 
 public class Stack {
