@@ -6,7 +6,12 @@ public class Main {
 
         // myStack.getTop();
         // myStack.getHeight();
-        myStack.push(8);
+        myStack.push(10);
+        myStack.push(5);
+        myStack.push(6);
+        myStack.push(0);
+        myStack.pop();
+
         myStack.printStack();
     }
 }
