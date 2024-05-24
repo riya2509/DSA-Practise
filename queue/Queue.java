@@ -50,4 +50,19 @@ public class Queue {
 
     }
 
+    // Removing first - Dequeue
+
+    public Node dequeue() {
+        if (length == 0)
+            return null;
+        Node temp = first;
+        first = first.next;
+        temp.next = null;
+        length--;
+        if (length == 0)
+            last = null;
+        return temp;
+
+    }
+
 }
