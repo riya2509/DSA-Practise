@@ -1,3 +1,8 @@
+//  Queue use FIFO - First In First Out
+// Adding -> enqueued, remove -> dequeued, head -> first, tail -> last
+// add from last i.e. from the tail side and remove from the 
+// head side , as both operation then takes O(1)
+
 package queue;
 
 public class Queue {
